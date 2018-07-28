@@ -5,6 +5,8 @@ const path = require("path");
 
 var app = express();
 
+const PORT = process.env.PORT || 4000;
+
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 hbs.registerHelper("getFullYear", () => new Date().getFullYear());
@@ -47,4 +49,6 @@ app.get("/bad", (req, res) => {
   });
 });
 
-app.listen(4000);
+app.listen(PORT, () => {
+  console.log(`Server is running in ${PORT}`);
+});
