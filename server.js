@@ -23,12 +23,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res) => {
-  res.render("maintenance.hbs", {
-    title: "Maintenance",
-    welcome: "We will be right back"
-  });
-});
+// app.use((req, res) => {
+//   res.render("maintenance.hbs", {
+//     title: "Maintenance",
+//     welcome: "We will be right back"
+//   });
+// });
 
 app.get("/", (req, res) => {
   res.render("home.hbs", {
@@ -52,3 +52,5 @@ app.get("/bad", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running in ${PORT}`);
 });
+
+module.exports.app = app;
